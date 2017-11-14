@@ -1,0 +1,75 @@
+
+body
+{
+	background: url("../images/background.jpg");
+	height: 100%;
+	width: 100%;
+	opacity: 50%;
+}
+.container-fluid
+{
+	border: 3px solid black;
+	float: left;
+	color: black;
+}
+
+#crystalheader
+{
+	height: 100%;
+	width: 100%;
+	margin: 20px 20px;
+	border: 2px solid black;
+	background-color: #3DFFD9;
+	font-family: 'Exo', sans-serif;
+	text-align: center;
+	padding-top: 30px;
+	text-shadow: 4px #3DFFEF;
+}
+#playGuide
+{
+	height: 100%;
+	width: 100%;
+	margin: 20px 10px;
+	border: 2px solid black;
+	background-color: white;
+	font-size: 24px;
+	line-height: 2;
+	font-weight: 14px;
+	font-family: 'Exo', sans-serif;
+	background-color: #3DFFD9;
+}
+#scoreCount
+{
+	height: 75%;
+	margin: 20px 10px;
+	border: 2px solid black;
+	background-color: #3DFFD9;
+}
+#winLossTrack
+{
+	height: 75%;
+	margin: 20px 10px;
+	border: 2px solid black;
+	background-color: #3DFFD9;
+}
+#gems img
+{
+	margin: 10px 10px;
+	border: 2px solid black;
+	background-color: #3DFFD9;
+	padding: 4px;
+}
+#totalScore
+{
+	height:100%
+	width: 100%;
+	margin: 20px auto;
+	border: 5px solid black;
+	background-color: #3DFFD9;
+}
+#currScore
+{
+	border: 5px solid black;
+	background-color: #3DFFD9;
+}
+
