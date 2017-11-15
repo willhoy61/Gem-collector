@@ -44,24 +44,19 @@ $(document).ready(function()
 	});
 	$("#green").on("click", function(){
 		currScore = greenGem + currScore;
-		$("#currScore").html(greenGem);
+		$("#currScore").html(currScore);
 		checkScore();
 	});
 
 	$("#purple").on("click", function(){
 		currScore = purpleGem + currScore;
-		$("#currScore").html(purpleGem);
+		$("#currScore").html(currScore);
 		checkScore();
 	});
 
 	$("#red").on("click", function(){
 		currScore = purpleGem + currScore;
-		$("#currScore").html(redGem);
-		checkScore();
-	});
-	$("#green").on("click", function(){
-		currScore = greenGem + currScore;
-		$("#currScore").html(greenGem);
+		$("#currScore").html(currScore);
 		checkScore();
 	});
 });
@@ -73,6 +68,7 @@ function checkScore(){
 	$("#winLossButton").html("you Win");
 	$("#wins").append(win);
 	reset();
+	numToGet = Math.floor((Math.random() * 102) + 19)
 	}
 	// if value of gems goes over value needed you lose
 	if(blueGem && greenGem && purpleGem && redGem > numToGet)
