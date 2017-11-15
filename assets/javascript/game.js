@@ -1,98 +1,102 @@
-// generate random number for 4 crystals
+// variables to hold values of gems, wins and losses
 var numToGet = 0;
-var blueGem = 0;
-var greenGem = 0;
-var purpleGem = 0
-var redGem = 0;
 var win = 0;
 var lose = 0;
 var currScore =0;
+var blueGem ;
+var greenGem;
+var purpleGem;
+var redGem;
 
-numToGet = Math.floor((Math.random() * 100) + 1);
+//generate random numbers for score needed to reach
+	numToGet = Math.floor((Math.random() * 102) + 19);
 		console.log(numToGet);
+	// generate random numbers for values of gems
+	blueGem = Math.floor((Math.random() *10) + 1);
 
-		blueGem = Math.floor((Math.random() *10) + 1);
+	greenGem = Math.floor((Math.random() *10) + 1);
 
-		greenGem = Math.floor((Math.random() *10) + 1);
+	purpleGem = Math.floor((Math.random() *10) + 1);
 
-		purpleGem = Math.floor((Math.random() *10) + 1);
+	redGem = Math.floor((Math.random() *10) + 1);
 
-		redGem = Math.floor((Math.random() *10) + 1);
-	if(blueGem && greenGem && purpleGem && redGem === numToGet)
-	{
-	$("#winLossButton").html("you Win");
-	win++;
-	$("#wins").append(win++);
-	}
-	if(blueGem && greenGem && purpleGem && redGem > numToGet)
-	{
-		$("winLossButton").html("You lose");
-		lose++;
-		$("#losses").append(lose++);
-	}
-	reset();
-
-function reset()
-{
+	// if values of gems match number needed to get you win
 	
-	$("#scoreCount, #blue, #greeen, #purple, #red").empty();	
-}
 
+
+var blueBase = blueGem;
+var greenBase = greenGem;
+var purpleBase = purpleGem;
+var redBase = redGem;
 $(document).ready(function()
 {
 	$("#scoreCount").on("click", function()
 	{
-		 
-	 $("#scoreCount").html(numToGet);
+		 $("#scoreCount").html(numToGet);
 
 	});
 	
 	
-	$("#blue").on("click", function()
-	{
-	
-	
-	if (blueGem <= numToGet)
-	{
-		blueGem += blueGem;
-	}
-	$("#currScore").html(blueGem);
-	reset();
+	$("#blue").on("click", function(){
+		currScore = blueGem + currScore;
+		$("#currScore").html(currScore);
+		checkScore();
 	});
-	$("#green").on("click", function()
-	{
-	
-	if(greenGem <= numToGet)
-	{
-		greenGem += greenGem;
-	}
-	$("#currScore").val(greenGem);
-	console.log(greenGem);
-	return greenGem;
+	$("#green").on("click", function(){
+		currScore = greenGem + currScore;
+		$("#currScore").html(greenGem);
+		checkScore();
 	});
+
 	$("#purple").on("click", function(){
-	
-	if(purpleGem <= numToGet)
-	{
-		purpleGem += purpleGem;
-	}
-	$("#currScore").val(purpleGem);
-	console.log(purpleGem);
-	return purpleGem;
-	});
-	$("#currScore").on("click", function(){
-	
-	if(redGem <= numToGet)
-	{
-		redGem =+ redGem;
-	}
-	$("#green").val(redGem);
-	console.log(redGem);
-	return redGem;
+		currScore = purpleGem + currScore;
+		$("#currScore").html(purpleGem);
+		checkScore();
 	});
 
- 	
+	$("#red").on("click", function(){
+		currScore = purpleGem + currScore;
+		$("#currScore").html(redGem);
+		checkScore();
+	});
+	$("#green").on("click", function(){
+		currScore = greenGem + currScore;
+		$("#currScore").html(greenGem);
+		checkScore();
+	});
 });
+// validates win or lose 
+function checkScore(){
+	if(blueGem && greenGem && purpleGem && redGem === numToGet)
+	{
+		win++;
+	$("#winLossButton").html("you Win");
+	$("#wins").append(win);
+	reset();
+	}
+	// if value of gems goes over value needed you lose
+	if(blueGem && greenGem && purpleGem && redGem > numToGet)
+	{
+		lose++;
+		$("winLossButton").html("You lose");
+		$("#losses").append(lose);
+		reset();
+		numToGet = Math.floor((Math.random() * 102) + 19);
+	}
+//function clears all numbers when game is won or lost
+}
+function reset()
+{
+	scoreCount = 0;
+	blueGem = 0;
+	greenGem = 0;
+	purpleGem = 0;
+	redGem = 0;
+	currScore = 0;
+	$("#scoreCount, #blue, #greeen, #purple, #red, #currScore").empty();
+	
+
+}
 // display users current score
 // alert user if they win
 // track wins and losses
