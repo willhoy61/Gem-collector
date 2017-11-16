@@ -68,7 +68,7 @@ function checkScore(){
 	$("#winLossButton").html("you Win");
 	$("#wins").append(win);
 	reset();
-	numToGet = Math.floor((Math.random() * 102) + 19)
+	numToGet = Math.floor((Math.random() * 102) + 19);
 	}
 	// if value of gems goes over value needed you lose
 	if(blueGem && greenGem && purpleGem && redGem > numToGet)
@@ -79,19 +79,19 @@ function checkScore(){
 		reset();
 		numToGet = Math.floor((Math.random() * 102) + 19);
 	}
+
 //function clears all numbers when game is won or lost
 }
 function reset()
 {
+	
+	$("#scoreCount, #blue, #greeen, #purple, #red, #currScore").empty();
 	scoreCount = 0;
 	blueGem = 0;
 	greenGem = 0;
 	purpleGem = 0;
 	redGem = 0;
 	currScore = 0;
-	$("#scoreCount, #blue, #greeen, #purple, #red, #currScore").empty();
-	
-
 }
 // display users current score
 // alert user if they win
